@@ -1,0 +1,207 @@
+/* I'm Using Andy Bell's "A More Modern Reset":  https://andy-bell.co.uk/a-more-modern-css-reset/ */
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Prevent font size inflation */
+html {
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+/* body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+  margin-block-end: 0;
+} */
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+    list-style: none;
+}
+
+/* Set core body defaults */
+body {
+    min-height: 100vh;
+    line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+    line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1,
+h2,
+h3,
+h4 {
+    text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+    color: currentColor;
+    text-decoration: none;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+    min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+    scroll-margin-block: 5ex;
+}
+
+:root {
+    --white: hsl(36, 100%, 99%);
+    --blue-100: hsl(233, 8%, 79%);
+    --blue-700: hsl(236, 13%, 42%);
+    --blue-900: hsl(240, 100%, 5%);
+
+    --orange: hsl(35, 77%, 62%);
+    --red: hsl(5, 85%, 63%);
+
+    --fw-base: 400;
+    --fw-bold: 700;
+    --fw-x-bold: 800;
+
+    --ff-inter: "Inter", sans-serif;
+    --fs-m-l: clamp(2rem, 1.5229rem + 2.0356vw, 2.5rem);
+    --fs-l-xl: clamp(2.5rem, 1.5458rem + 4.0712vw, 3.5rem);
+    --fs-xl: 3.5rem;
+    --fs-l: 2.5rem;
+    --fs-m: 2rem;
+    --fs-s: 1.25rem;
+    --fs-xs: 1.125rem;
+    --fs-base: 0.9375rem;
+}
+
+body {
+    font-family: var(--ff-inter);
+    font-size: var(--fs-base);
+    color: var(--blue-700);
+}
+h1,
+h2,
+h3 {
+    color: var(--blue-900);
+
+    & [data-light] {
+        color: var(--blue-100);
+    }
+}
+
+h1 {
+    font-size: var(--fs-l-xl);
+}
+h2 {
+    font-size: var(--fs-m);
+    & [data-fluid] {
+        font-size: var(--fs-m-l);
+    }
+}
+h3 {
+    font-size: var(--fs-s);
+}
+
+li {
+    list-style-type: none;
+}
+
+.new {
+    background-color: var(--blue-900);
+    width: min(100%, 350px);
+    padding: 2rem;
+    padding-block-end: 0;
+
+    & h2 {
+        color: var(--orange);
+        margin-block-end: 0.5rem;
+    }
+
+    & li {
+        padding-block: 1.875rem;
+
+        &:where(:not(:last-child)) {
+            border-bottom: 1px solid var(--blue-100);
+        }
+    }
+
+    & a {
+        color: var(--white);
+        font-size: var(--fs-s);
+
+        &:hover {
+            color: var(--orange);
+        }
+    }
+}
+
+.popular-list {
+    display: flex;
+    gap: 2rem;
+    counter-reset: popular;
+
+    & li {
+        display: flex;
+        gap: 1.5rem;
+        width: min(100%, 350px);
+
+        & img {
+            width: 100px;
+        }
+    }
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+
+    &::before {
+        counter-increment: popular;
+        content: "0" counter(popular);
+        color: var(--blue-100);
+        font-size: var(--fs-m);
+        font-weight: var(--fw-bold);
+    }
+    & a {
+        color: var(--blue-900);
+        font-weight: var(--fw-x-bold);
+
+        &:hover {
+            color: var(--red);
+        }
+    }
+}

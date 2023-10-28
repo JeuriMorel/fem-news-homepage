@@ -11,72 +11,102 @@
             sizes="32x32"
             href="./assets/images/favicon-32x32.png"
         />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
             href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap"
             rel="stylesheet"
-        />
+        /> -->
         <link rel="stylesheet" href="/css/styles.css" />
 
         <title>Frontend Mentor | News homepage</title>
     </head>
     <body>
-        Home New Popular Trending Categories The Bright Future of Web 3.0? We
-        dive into the next evolution of the web that claims to put the power of
-        the platforms back into the hands of the people. But is it really
-        fulfilling its promise? Read more
-
-        <div class="new">
-            <h2>New</h2>
-            <ul>
-                <li>
-                    <a href="#"> Hydrogen VS Electric Cars </a>
-                    <p>Will hydrogen-fueled cars ever catch up to EVs?</p>
-                </li>
-                <li>
-                    <a href="#"> The Downsides of AI Artistry </a>
-                    <p>
-                        What are the possible adverse effects of on-demand AI
-                        image generation?
-                    </p>
-                </li>
-                <li>
-                    <a href="#"> Is VC Funding Drying Up? </a>
-                    <p>
-                        Private funding by VC firms is down 50% YOY. We take a
-                        look at what that means.
-                    </p>
-                </li>
-            </ul>
-        </div>
-
-        <div class="popular">
-            <ul class="popular-list">
-                <li>
-                    <img src="assets/images/image-retro-pcs.jpg" alt="" />
-                    <div class="text">
-                        <a href="#">Reviving Retro PCs</a>
+        <main>
+            <header>
+                <img src="assets/images/logo.svg" alt="" />
+                <nav>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">New</a></li>
+                        <li><a href="#">Popular</a></li>
+                        <li><a href="#">Trending</a></li>
+                        <li><a href="#">Categories</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <section>
+                <picture>
+                    <source
+                        media="(min-width: 768px)"
+                        srcset="assets/images/image-web-3-desktop.jpg"
+                    />
+                    <img src="assets/images/image-web-3-mobile.jpg" alt="" />
+                </picture>
+                <div class="hero-content">
+                    <h1>The Bright Future of Web 3.0?</h1>
+                    <div class="hero-text">
                         <p>
-                            What happens when old PCs are given modern upgrades?
+                            We dive into the next evolution of the web that claims to
+                            put the power of the platforms back into the hands of the
+                            people. But is it really fulfilling its promise?
                         </p>
+                        <a href="#">Read more</a>
                     </div>
-                </li>
-                <li>
-                    <img src="assets/images/image-top-laptops.jpg" alt="" />
-                    <div class="text">
-                        <a href="#">Top 10 Laptops of 2022</a>
-                        <p>Our best picks for various needs and budgets.</p>
-                    </div>
-                </li>
-                <li>
-                    <img src="assets/images/image-gaming-growth.jpg" alt="" />
-                    <div class="text">
-                        <a href="#">The Growth of Gaming</a>
-                        <p>How the pandemic has sparked fresh opportunities.</p>
-                    </div>
-                </li>
-            </ul>
-        </div>
+    
+                </div>
+            </section>
+    
+            <aside class="new">
+                <h2>New</h2>
+                <ul>
+                    <li>
+                        <a href="#"> Hydrogen VS Electric Cars </a>
+                        <p>Will hydrogen-fueled cars ever catch up to EVs?</p>
+                    </li>
+                    <li>
+                        <a href="#"> The Downsides of AI Artistry </a>
+                        <p>
+                            What are the possible adverse effects of on-demand AI
+                            image generation?
+                        </p>
+                    </li>
+                    <li>
+                        <a href="#"> Is VC Funding Drying Up? </a>
+                        <p>
+                            Private funding by VC firms is down 50% YOY. We take a
+                            look at what that means.
+                        </p>
+                    </li>
+                </ul>
+            </aside>
+            
+                <ul class="popular-list">
+                    <li>
+                        <img src="assets/images/image-retro-pcs.jpg" alt="" />
+                        <div class="text">
+                            <a href="#">Reviving Retro PCs</a>
+                            <p>
+                                What happens when old PCs are given modern upgrades?
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="assets/images/image-top-laptops.jpg" alt="" />
+                        <div class="text">
+                            <a href="#">Top 10 Laptops of 2022</a>
+                            <p>Our best picks for various needs and budgets.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="assets/images/image-gaming-growth.jpg" alt="" />
+                        <div class="text">
+                            <a href="#">The Growth of Gaming</a>
+                            <p>How the pandemic has sparked fresh opportunities.</p>
+                        </div>
+                    </li>
+                </ul>
+            
+        </main>
     </body>
 </html>
